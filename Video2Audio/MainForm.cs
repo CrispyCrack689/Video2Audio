@@ -16,12 +16,13 @@ namespace CrispyTool.Video2Audio
         private readonly Label fileNameLabel;
         private readonly Panel mainPanel;
         private readonly TableLayoutPanel tableLayoutPanel;
+        private readonly ProgressBar progressBar;
 
         public MainForm()
         {
             Text = "CrispyAudioExtractor";
             Width = 400;
-            Height = 250;
+            Height = 300;
 
             mainPanel = new Panel
             {
@@ -82,6 +83,14 @@ namespace CrispyTool.Video2Audio
             };
             extractButton.Click += ExtractButton_Click;
 
+            progressBar = new ProgressBar
+            {
+                Dock = DockStyle.Top,
+                Height = 20,
+                Margin = new Padding(10, 20, 10, 20)
+            };
+
+            mainPanel.Controls.Add(progressBar);
             mainPanel.Controls.Add(extractButton);
             mainPanel.Controls.Add(tableLayoutPanel);
             mainPanel.Controls.Add(fileNameLabel);
@@ -153,7 +162,8 @@ namespace CrispyTool.Video2Audio
 
             var outputFileName = Path.GetFileNameWithoutExtension(inputFilePath) + ".mp3";
             var outputFilePath = Path.Combine(outputDirectory, outputFileName);
-            AudioExtractor.ExtractAudio(inputFilePath, outputFilePath);
+            var progress = new Progress<int>(value => progressBar.Value = value);
+            Task.Run(() => AudioExtractor.ExtractAudio(inputFilePath, outputFilePath, progress));
         }
     }
 }

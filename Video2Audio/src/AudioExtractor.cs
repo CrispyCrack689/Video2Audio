@@ -14,7 +14,8 @@ namespace CrispyTool.Video2Audio.src
         /// </summary>
         /// <param name="inputFilePath">抽出元パス</param>
         /// <param name="outputFilePath">保存先パス</param>
-        public static void ExtractAudio(string inputFilePath, string outputFilePath)
+        /// <param name="progress">進行度</param>
+        public static void ExtractAudio(string inputFilePath, string outputFilePath, IProgress<int> progress)
         {
             var startInfo = new ProcessStartInfo
             {
@@ -35,6 +36,14 @@ namespace CrispyTool.Video2Audio.src
                 process.Start();
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
+
+                // 進行度バー
+                for (int i = 0; i <= 100; i += 10)
+                {
+                    progress.Report(i);
+                    Thread.Sleep(500);
+                }
+
                 process.WaitForExit();
             }
 
