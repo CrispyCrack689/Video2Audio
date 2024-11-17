@@ -3,7 +3,7 @@ using CrispyTool.Video2Audio.src;
 namespace CrispyTool.Video2Audio
 {
     /// <summary>
-    /// メインフォームクラス
+    /// 繝｡繧､繝ｳ繝輔か繝ｼ繝繧ｯ繝ｩ繧ｹ
     /// author: CrispyCrack
     /// date: 2024/10/19
     /// </summary>

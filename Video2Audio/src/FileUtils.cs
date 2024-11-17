@@ -1,25 +1,25 @@
 namespace CrispyTool.Video2Audio.src
 {
     /// <summary>
-    /// ƒtƒ@ƒCƒ‹‘€ìƒ†[ƒeƒBƒŠƒeƒBƒNƒ‰ƒX
+    /// ãƒ•ã‚¡ã‚¤ãƒ«æ“ä½œãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ã‚¯ãƒ©ã‚¹
     /// author: CrispyCrack
     /// date: 2024/10/19
     /// </summary>
     public static class FileUtils
     {
         /// <summary>
-        /// ƒwƒbƒ_[‚ÌƒoƒCƒiƒŠ‚ªMP4Œ`®‚©‚Ç‚¤‚©ƒ`ƒFƒbƒN
+        /// ãƒ˜ãƒƒãƒ€ãƒ¼ã®ãƒã‚¤ãƒŠãƒªãŒMP4å½¢å¼ã‹ã©ã†ã‹ãƒã‚§ãƒƒã‚¯
         /// </summary>
-        /// <param name="filePath">ƒtƒ@ƒCƒ‹ƒpƒX</param>
-        /// <returns>MP4ƒtƒ@ƒCƒ‹‚È‚çtrue</returns>
+        /// <param name="filePath">ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹</param>
+        /// <returns>MP4ãƒ•ã‚¡ã‚¤ãƒ«ãªã‚‰true</returns>
         public static bool IsMp4File(string filePath)
         {
-            byte[] mp4Header = [0x66, 0x74, 0x79, 0x70]; // 4~8ƒoƒCƒg–Ú‚ª"ftyp"‚Å‚ ‚ê‚ÎMP4ƒtƒ@ƒCƒ‹
+            byte[] mp4Header = [0x66, 0x74, 0x79, 0x70]; // 4~8ãƒã‚¤ãƒˆç›®ãŒ"ftyp"ã§ã‚ã‚Œã°MP4ãƒ•ã‚¡ã‚¤ãƒ«
             var buffer = new byte[4];
 
             using (var fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
-                fs.Seek(4, SeekOrigin.Begin); // Å‰‚Ì4ƒoƒCƒg‚ğƒXƒLƒbƒv
+                fs.Seek(4, SeekOrigin.Begin); // æœ€åˆã®4ãƒã‚¤ãƒˆã‚’ã‚¹ã‚­ãƒƒãƒ—
                 fs.Read(buffer, 0, 4);
             }
 

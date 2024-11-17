@@ -1,4 +1,4 @@
-﻿using CrispyTool.Video2Audio;
+using CrispyTool.Video2Audio;
 
 class Program
 {
