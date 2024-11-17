@@ -3,18 +3,18 @@ using System.Diagnostics;
 namespace CrispyTool.Video2Audio.src
 {
     /// <summary>
-    /// ‰¹º’ŠoƒNƒ‰ƒX
+    /// éŸ³å£°æŠ½å‡ºã‚¯ãƒ©ã‚¹
     /// author: CrispyCrack
     /// date: 2024/10/19
     /// </summary>
     public static class AudioExtractor
     {
         /// <summary>
-        /// ‰¹º‚ð’Šo‚·‚é
+        /// éŸ³å£°ã‚’æŠ½å‡ºã™ã‚‹
         /// </summary>
-        /// <param name="inputFilePath">’ŠoŒ³ƒpƒX</param>
-        /// <param name="outputFilePath">•Û‘¶æƒpƒX</param>
-        /// <param name="progress">is“x</param>
+        /// <param name="inputFilePath">æŠ½å‡ºå…ƒãƒ‘ã‚¹</param>
+        /// <param name="outputFilePath">ä¿å­˜å…ˆãƒ‘ã‚¹</param>
+        /// <param name="progress">é€²è¡Œåº¦</param>
         public static void ExtractAudio(string inputFilePath, string outputFilePath, IProgress<int> progress)
         {
             var startInfo = new ProcessStartInfo
@@ -37,7 +37,7 @@ namespace CrispyTool.Video2Audio.src
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
 
-                // is“xƒo[
+                // é€²è¡Œåº¦ãƒãƒ¼
                 for (int i = 0; i <= 100; i += 10)
                 {
                     progress.Report(i);
