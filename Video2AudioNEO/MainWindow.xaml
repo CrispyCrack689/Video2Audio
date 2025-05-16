@@ -1,0 +1,38 @@
+﻿<Window x:Class="Video2AudioNEO.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Video2AudioNEO"
+        mc:Ignorable="d"
+        Title="CrispyAudioExtractorNEO" Height="600" Width="900" Background="#F4F5F7">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition Width="300" />
+        </Grid.ColumnDefinitions>
+
+        <!-- 左側 -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="60,0,0,0">
+                <!-- Inputパス -->
+                <TextBlock Text="Input Path" FontSize="16" Margin="0,0,0,0"/>
+                <TextBlock Text="C://hoge/hoge/hoge/hoge/hoge/hoge.mp4" FontSize="24" Margin="0,0,0,40"/>
+                <!-- 下矢印 -->
+            </StackPanel>
+        </Grid>
+        
+        <!-- セパレーター -->
+        <Border Grid.Column="1" Background="Black" Width="1" HorizontalAlignment="Center"/>
+        
+        <!-- 右側 -->
+        <Grid Grid.Column="2"/>
+
+    </Grid>
+</Window>
